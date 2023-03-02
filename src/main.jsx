@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { FirstComponent } from './components/firstComponent'
+import { Calculator } from './components/Calculator'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <FirstComponent/>
+    <Calculator/>
   </React.StrictMode>,
 )
