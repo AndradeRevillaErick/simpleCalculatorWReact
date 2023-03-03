@@ -12,54 +12,51 @@ export const Calculator = () => {
 
     const onHandleClear = () => {
         setOperation( '' );
+        setResult(0);
     }
 
     const onHandleDelete = () => {
         setOperation( operation.slice(0, -1) );
     }
 
-    const onHandleResult = () => {
+    const calculate = () => {
         
         const numbers = operation.match(/(\d+\.?\d*|\+|\-|\*|\/)/g);
-
-        const pilaOperand = [];
-        const pilaSings = [];
+        const operands = [];
+        const sings = [];
+        const operators = {
+            '+': (a, b) => a + b,
+            '-': (a, b) => a - b,
+            '*': (a, b) => a * b,
+            '/': (a, b) => a / b,
+        };
 
         numbers.map( val => {
-            if ( isNaN(val) ) {
-                pilaSings.push( val );
+            if( isNaN(val) ) {
+                sings.push( val );
             }else{
-                pilaOperand.push( parseFloat(val) );
+                operands.push( parseFloat(val) );
             }
-            
-            if( pilaOperand.length >= 2 ){
-                const operand2 = pilaOperand.pop();
-                const operand1 = pilaOperand.pop();
-                const sign = pilaSings.pop();
-          
-                switch ( sign ) {
-                  case '+':
-                    pilaOperand.push(operand1 + operand2);
-                    break;
-          
-                  case '-':
-                    pilaOperand.push(operand1 - operand2);
-                    break;
-          
-                  case '*':
-                    pilaOperand.push(operand1 * operand2);
-                    break;
-          
-                  case '/':
-                    pilaOperand.push(operand1 / operand2);
-                    break;
-                }
+
+            if( operands.length >= 2 ){
+                const op2 = operands.pop();
+                const op1 = operands.pop();
+                const operator = operators[sings.pop()];
+                operands.push(operator(op1, op2));
             }
         });
         
-        setResult( pilaOperand.pop() );
+        return operands.pop();
     }
 
+    const onHandleResult = () => {
+        try {
+            const res = calculate(operation);
+            setResult(res);
+        } catch (e) {
+            setResult('Syntax Error');
+        }
+    };
 
     return(
         <>
