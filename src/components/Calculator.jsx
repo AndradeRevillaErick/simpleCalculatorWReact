@@ -7,7 +7,7 @@ export const Calculator = () => {
     return(
         <>
             <h1>{ operation }</h1>
-            <h4 >{ result }</h4>
+            <h4>{ result }</h4>
             <button onClick={ onHandleClear }>AC</button>
             <button onClick={ onHandleDelete }>DE</button>
             <button onClick={ () => onHandleOperation('.') }>.</button>

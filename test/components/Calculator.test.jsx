@@ -11,14 +11,17 @@ describe('Tests in Calculator component', () => {
     });
 
     test('Should change the result from the h4 result', () => {
+        render( <Calculator/> );
+        fireEvent.click( screen.getByText('=') );
 
+        expect( screen.getByRole('heading', { level: 4 }).innerHTML ).toBeTruthy();
     });
 
     test('Should change the content from the h1 screen', () => {
         render( <Calculator/> );
-        fireEvent.click( screen.getAllByRole('button') );
+        fireEvent.click( screen.getAllByRole('button')[7] );
 
-        expect( screen.getByText('Syntax Error'));
+        expect( screen.getByRole('heading', { level: 1 }).innerHTML ).toBe('9');
     }); 
 
     test('Shoul show Syntax Error message if you click = with an empty number', () => {
@@ -26,5 +29,13 @@ describe('Tests in Calculator component', () => {
         fireEvent.click( screen.getByText('=') );
 
         expect( screen.getByText('Syntax Error') );
+    });
+
+    test('Should clear the screen when you click AC', () => {
+        render( <Calculator/> );
+        fireEvent.click( screen.getByText('AC') );
+
+        expect( screen.getByRole('heading', { level: 1 }).innerHTML ).toBe('');
+        expect( screen.getByRole('heading', { level: 4 }).innerHTML ).toBe('0');
     });
  })
