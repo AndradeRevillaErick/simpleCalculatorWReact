@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in Calculator component Should match with the snapshoot 1`] = `
+<div>
+  <h1 />
+  <h4>
+    0
+  </h4>
+  <button>
+    AC
+  </button>
+  <button>
+    DE
+  </button>
+  <button>
+    .
+  </button>
+  <button>
+    /
+  </button>
+  <button>
+    *
+  </button>
+  <button>
+    -
+  </button>
+  <button>
+    +
+  </button>
+  <button>
+    9
+  </button>
+  <button>
+    8
+  </button>
+  <button>
+    7
+  </button>
+  <button>
+    6
+  </button>
+  <button>
+    5
+  </button>
+  <button>
+    4
+  </button>
+  <button>
+    3
+  </button>
+  <button>
+    2
+  </button>
+  <button>
+    1
+  </button>
+  <button>
+    0
+  </button>
+  <button>
+    00
+  </button>
+  <button>
+    =
+  </button>
+</div>
+`;
