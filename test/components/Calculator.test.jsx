@@ -10,18 +10,18 @@ describe('Tests in Calculator component', () => {
         expect( container ).toMatchSnapshot();
     });
 
-    test('Should change the result from the h4 result', () => {
+    test('Should change the result from the result', () => {
         render( <Calculator/> );
         fireEvent.click( screen.getByText('=') );
 
-        expect( screen.getByRole('heading', { level: 4 }).innerHTML ).toBeTruthy();
+        expect( screen.getByTestId('test-result').innerHTML ).toBe('Syntax Error');
     });
 
-    test('Should change the content from the h1 screen', () => {
+    test('Should change the content from the display', () => {
         render( <Calculator/> );
-        fireEvent.click( screen.getAllByRole('button')[7] );
+        fireEvent.click( screen.getAllByRole('button')[6] );
 
-        expect( screen.getByRole('heading', { level: 1 }).innerHTML ).toBe('9');
+        expect( screen.getByTestId('test-display').innerHTML ).toBe('9');
     }); 
 
     test('Shoul show Syntax Error message if you click = with an empty number', () => {
@@ -35,7 +35,7 @@ describe('Tests in Calculator component', () => {
         render( <Calculator/> );
         fireEvent.click( screen.getByText('AC') );
 
-        expect( screen.getByRole('heading', { level: 1 }).innerHTML ).toBe('');
-        expect( screen.getByRole('heading', { level: 4 }).innerHTML ).toBe('0');
+        expect( screen.getByTestId('test-display').innerHTML ).toBe('');
+        expect( screen.getByTestId('test-result').innerHTML ).toBe('0');
     });
  })

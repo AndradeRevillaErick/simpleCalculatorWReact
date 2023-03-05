@@ -8,8 +8,8 @@ export const Calculator = () => {
         <>
             <div className="calculator">
                 <div className="display">
-                    <div className="input">{ operation }</div>
-                    <div className="result">{ result }</div>
+                    <div data-testid="test-display" className="input">{ operation }</div>
+                    <div data-testid="test-result" className="result">{ result }</div>
                 </div>
 
                 <div className="buttons">
