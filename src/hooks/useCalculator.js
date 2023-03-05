@@ -48,7 +48,7 @@ export const useCalculator = () => {
 
   const onHandleResult = () => {
     try {
-      const res = calculate(operation);
+      const res = calculate();
       setResult(res);
     } catch (e) {
       setResult("Syntax Error");
