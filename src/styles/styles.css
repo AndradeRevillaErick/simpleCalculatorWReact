@@ -1,0 +1,95 @@
+body {
+    text-align: center;
+    margin: 0;
+    background-color: #bf4d5d;;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.calculator {
+    max-width: 360px;
+    /* background-color: #F2EFEA; */
+    /* background-color: #C8B9A9; */
+    background-color: #ECE4D8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.19), -5px -5px 16px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+}
+
+.display {
+    width: 100%;
+    height: 80px;
+    text-align: right;
+    margin-bottom: 10px;
+    padding: 5px 20px;
+    /* color: #7D734F; */
+    /* color: #6E5D4E; */
+    color: #5C5144;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 10px;
+    /* background: #D6D0B6;
+    box-shadow: inset 5px 5px 4px #b6b19b,
+                inset -5px -5px 4px #f6efd1; */
+    /* background: #F5E5C5;
+    box-shadow: inset 5px 5px 4px #625c4f,
+                inset -5px -5px 4px #ffffff; */
+    background: #EBE0B6;
+    box-shadow: inset 5px 5px 4px #5e5a49,
+                inset -5px -5px 4px #ffffff;
+}
+
+.input {
+    font-size: 30px;
+    margin-bottom: 10px;
+    height: 35px;
+}
+
+.result {
+    font-size: 20px;
+}
+
+.equal {
+    width: calc(50% - 10px);
+}
+
+button {
+    width: calc(25% - 10px);
+    height: 50px;
+    font-size: 20px;
+    margin: 10px 5px;
+    border: none;
+    /* color: #49463E; */
+    /* color: #413B2B; */
+    color: #3C2F2F;
+    border-radius: 10px;
+    /* background: linear-gradient(145deg, #f6f2e2, #cfcbbe);
+    box-shadow:  5px 5px 11px #5c5a54,
+                -5px -5px 11px #ffffff; */
+    /* background: linear-gradient(145deg, #f8f1e3, #d1cbbf);
+    box-shadow:  5px 5px 11px #5d5a55,
+                    -5px -5px 11px #ffffff; */
+    background: linear-gradient(145deg, #e0d4c1, #bcb2a2);
+    box-shadow:  5px 5px 11px #544f48,
+                    -5px -5px 11px #ffffff;
+}
+
+.operator {
+    background: linear-gradient(145deg, #d7d4c4, #b5b2a5);
+    box-shadow:  5px 5px 11px #504f49,
+                -5px -5px 11px #ffffff;
+    /* background: linear-gradient(145deg, #cbc0b3, #aba196);
+    box-shadow:  5px 5px 11px #4c4843,
+                -5px -5px 11px #ffffff; */
+    background: linear-gradient(145deg, #d2c7ba, #b0a79d);
+    box-shadow:  5px 5px 11px #4e4a46,
+                -5px -5px 11px #ffffff;
+}
+
+button:active {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.19),
+        0 1.5px 1.5px rgba(0, 0, 0, 0.23);
+}

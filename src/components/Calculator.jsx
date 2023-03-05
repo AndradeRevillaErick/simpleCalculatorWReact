@@ -6,27 +6,39 @@ export const Calculator = () => {
 
     return(
         <>
-            <h1>{ operation }</h1>
-            <h4>{ result }</h4>
-            <button onClick={ onHandleClear }>AC</button>
-            <button onClick={ onHandleDelete }>DE</button>
-            <button onClick={ () => onHandleOperation('.') }>.</button>
-            <button onClick={ () => onHandleOperation('/') }>/</button>
-            <button onClick={ () => onHandleOperation('*') }>*</button>
-            <button onClick={ () => onHandleOperation('-') }>-</button>
-            <button onClick={ () => onHandleOperation('+') }>+</button>
-            <button onClick={ () => onHandleOperation(9) } >9</button>
-            <button onClick={ () => onHandleOperation(8) } >8</button>
-            <button onClick={ () => onHandleOperation(7) } >7</button>
-            <button onClick={ () => onHandleOperation(6) } >6</button>
-            <button onClick={ () => onHandleOperation(5) } >5</button>
-            <button onClick={ () => onHandleOperation(4) } >4</button>
-            <button onClick={ () => onHandleOperation(3) } >3</button>
-            <button onClick={ () => onHandleOperation(2) } >2</button>
-            <button onClick={ () => onHandleOperation(1) } >1</button>
-            <button onClick={ () => onHandleOperation(0) } >0</button>
-            <button onClick={ () => onHandleOperation('00') } >00</button>
-            <button onClick={ onHandleResult } >=</button>
+            <div className="calculator">
+                <div className="display">
+                    <div className="input">{ operation }</div>
+                    <div className="result">{ result }</div>
+                </div>
+
+                <div className="buttons">
+                    <button className="number" onClick={ onHandleClear }>AC</button>
+                    <button className="number" onClick={ onHandleDelete }>DE</button>
+                    <button className="operator" onClick={ () => onHandleOperation('.') }>.</button>
+                    <button className="operator" onClick={ () => onHandleOperation('/') }>/</button>
+
+                    <button className="number" onClick={ () => onHandleOperation(7) } >7</button>
+                    <button className="number" onClick={ () => onHandleOperation(8) } >8</button>
+                    <button className="number" onClick={ () => onHandleOperation(9) } >9</button>
+                    <button className="operator" onClick={ () => onHandleOperation('*') }>*</button>
+                    
+                    <button className="number" onClick={ () => onHandleOperation(4) } >4</button>
+                    <button className="number" onClick={ () => onHandleOperation(5) } >5</button>
+                    <button className="number" onClick={ () => onHandleOperation(6) } >6</button>
+                    <button className="operator" onClick={ () => onHandleOperation('-') }>-</button>
+
+
+                    <button className="number" onClick={ () => onHandleOperation(1) } >1</button>
+                    <button className="number" onClick={ () => onHandleOperation(2) } >2</button>
+                    <button className="number" onClick={ () => onHandleOperation(3) } >3</button>
+                    <button className="operator" onClick={ () => onHandleOperation('+') }>+</button>
+                    
+                    <button className="number" onClick={ () => onHandleOperation('00') } >00</button>
+                    <button className="number" onClick={ () => onHandleOperation(0) } >0</button>
+                    <button className="operator equal" onClick={ onHandleResult } >=</button>
+                </div>
+            </div>
         </>
     )
 }
